@@ -21,7 +21,7 @@ public class HelloController {
         jsonData.setUserId(1);
         jsonData.setId(1);
         jsonData.setTitle("Local Object Skull");
-        jsonData.setCompleted(false);
+        jsonData.setCompleted(0);
 
         return jsonData;
     }
@@ -30,7 +30,7 @@ public class HelloController {
         private int userId;
         private int id;
         private String title;
-        private boolean completed;
+        private int completed;
 
         // Crea los getters y setters para los campos
         // userId
@@ -61,11 +61,11 @@ public class HelloController {
         }
 
         // completed
-        public boolean isCompleted() {
+        public int isCompleted() {
             return completed;
         }
 
-        public void setCompleted(boolean completed) {
+        public void setCompleted(int completed) {
             this.completed = completed;
         }
     }
