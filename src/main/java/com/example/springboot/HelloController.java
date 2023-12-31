@@ -15,4 +15,59 @@ public class HelloController {
         return "Greetings from Spring Boot in hello Controller!";
     }
 
+    @GetMapping("/json")
+    public YourModelClass getJson() {
+        YourModelClass jsonData = new YourModelClass();
+        jsonData.setUserId(1);
+        jsonData.setId(1);
+        jsonData.setTitle("Local Object Skull");
+        jsonData.setCompleted(false);
+
+        return jsonData;
+    }
+
+    public static class YourModelClass {
+        private int userId;
+        private int id;
+        private String title;
+        private boolean completed;
+
+        // Crea los getters y setters para los campos
+        // userId
+        public int getUserId() {
+            return userId;
+        }
+
+        public void setUserId(int userId) {
+            this.userId = userId;
+        }
+
+        // id
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        // title
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        // completed
+        public boolean isCompleted() {
+            return completed;
+        }
+
+        public void setCompleted(boolean completed) {
+            this.completed = completed;
+        }
+    }
+
 }
