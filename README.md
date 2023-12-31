@@ -5,3 +5,6 @@ https://medium.com/@rupertcarr/deploying-a-spring-boot-api-to-railway-using-mave
 
 Server:
 https://railway.app/account/usage
+
+URL:
+https://nymbusbackendjspringapis-production.up.railway.app
