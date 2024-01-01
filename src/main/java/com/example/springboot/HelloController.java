@@ -20,7 +20,7 @@ public class HelloController {
         YourModelClass jsonData = new YourModelClass();
         jsonData.setUserId(1);
         jsonData.setId(1);
-        jsonData.setTitle("Local Object Skull");
+        jsonData.setTitle("Local Object Skull in Server");
         jsonData.setCompleted(0);
 
         return jsonData;
