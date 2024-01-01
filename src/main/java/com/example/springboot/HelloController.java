@@ -32,6 +32,14 @@ public class HelloController {
         private String title;
         private int completed;
 
+        public int getCompleted() {
+            return completed;
+        }
+
+        public void setCompleted(int completed) {
+            this.completed = completed;
+        }
+
         // Crea los getters y setters para los campos
         // userId
         public int getUserId() {
@@ -60,14 +68,7 @@ public class HelloController {
             this.title = title;
         }
 
-        // completed
-        public int isCompleted() {
-            return completed;
-        }
 
-        public void setCompleted(int completed) {
-            this.completed = completed;
-        }
     }
 
 }
