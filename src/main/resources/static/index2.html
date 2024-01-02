@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Obtener datos de una API</title>
+    <title>Obtener y mostrar valores desde una API</title>
 </head>
 <body>
-    <script>
-        let request = new XMLHttpRequest();
-        request.open("GET", "https://nymbusbackendjspringapis-production.up.railway.app/json");
-        request.send();
-        request.onload = () => {
-            if (request.status === 200) {
-                console.log(JSON.parse(request.response));
-            } else {
-                console.log("Page not found");
-            }
-        }
+<textarea id="jsonValues" rows="10" cols="50"></textarea>
+
+<script>
+        // Hacer una solicitud GET a la API
+        fetch('https://nymbusbackendjspringapis-production.up.railway.app/obtenerProductos')
+            .then(response => response.json()) // Parsear la respuesta como JSON
+            .then(data => {
+                // Convertir el array JSON a una cadena legible
+                const jsonString = JSON.stringify(data, null, 2);
+
+                // Mostrar la cadena en el textarea con id "jsonValues"
+                document.getElementById('jsonValues').innerText = jsonString;
+            })
+            .catch(error => {
+                console.error('Error al obtener los valores:', error);
+            });
     </script>
 </body>
 </html>
