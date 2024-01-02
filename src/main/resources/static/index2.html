@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Obtener y mostrar valores desde una API</title>
+  <title>Mostrar nombres desde una API</title>
 </head>
 <body>
-<textarea id="jsonValues" rows="10" cols="50"></textarea>
+<b id="names"></b>
 
 <script>
         // Hacer una solicitud GET a la API
         fetch('https://nymbusbackendjspringapis-production.up.railway.app/obtenerProductos')
             .then(response => response.json()) // Parsear la respuesta como JSON
             .then(data => {
-                // Convertir el array JSON a una cadena legible
-                const jsonString = JSON.stringify(data, null, 2);
+                // Obtener los nombres de los objetos JSON
+                const nombres = data.map(obj => obj.nombre).join(', ');
 
-                // Mostrar la cadena en el textarea con id "jsonValues"
-                document.getElementById('jsonValues').innerText = jsonString;
+                // Mostrar los nombres en la etiqueta <b> con id "names"
+                document.getElementById('names').innerText = nombres;
             })
             .catch(error => {
-                console.error('Error al obtener los valores:', error);
+                console.error('Error al obtener los nombres:', error);
             });
     </script>
 </body>
