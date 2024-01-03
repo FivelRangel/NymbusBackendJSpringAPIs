@@ -671,22 +671,20 @@
                 </div>
               </form><!-- Vertical Form -->
 
-               <script>
+                <script>
     function submitForm() {
       const id = document.getElementById('inputID').value;
-      const nombre = document.getElementById('inputName').value;
+      const name = document.getElementById('inputName').value;
       const password = document.getElementById('inputEmail').value;
-      const identifier = document.getElementById('inputIdentifier').value;
       const budget = document.getElementById('inputBudget').value;
-
-
+      const identifier = document.getElementById('inputIdentifier').value;
 
       const formData = {
         id: id,
-        name: name,
-        email: email,
-        budget: budget,
-        identifier: identifier
+        nombre: name,
+        password: password,
+        identifier: identifier,
+        budget: parseInt(budget) // Convertir el valor del budget a un número entero
       };
 
       fetch('https://nymbusbackendjspringapis-production.up.railway.app/bank/addUser', {
@@ -712,7 +710,6 @@
       });
     }
   </script>
-
             </div>
           </div>
 
