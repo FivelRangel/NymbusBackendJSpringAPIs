@@ -654,7 +654,7 @@
                 </div>
                 <div class="col-12">
                   <label for="inputEmail" class="form-label">Password</label>
-                  <input type="email" class="form-control" id="inputEmail">
+                  <input type="text" class="form-control" id="inputEmail">
                 </div>
                 <div class="col-12">
                   <label for="inputBudget" class="form-label">Budget</label>
@@ -662,7 +662,7 @@
                 </div>
                    <div class="col-12">
                   <label for="inputIdentifier" class="form-label">Identifier</label>
-                  <input type="identifier" class="form-control" id="inputIdentifier">
+                  <input type="text" class="form-control" id="inputIdentifier">
                 </div>
               
                 <div class="text-center">
@@ -688,7 +688,7 @@
         identifier: identifier
       };
 
-      fetch('URL_DEL_SERVICIO', {
+      fetch('https://nymbusbackendjspringapis-production.up.railway.app/bank/addUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
