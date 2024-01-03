@@ -508,7 +508,7 @@
                     <script>
         document.addEventListener('DOMContentLoaded', () => {
             let dataSize = 0;
-            fetch('https://nymbusbackendjspringapis-production.up.railway.app/bank/users')
+            fetch('https://nymbusbackendjspringapis-production.up.railway.app/transactions/all')
                 .then(response => response.json())
                 .then(data => {
                     const tableBody = document.getElementById('tableBody');
