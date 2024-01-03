@@ -16,3 +16,4 @@ https://railway.app/account/usage
 
 URL:
 https://nymbusbackendjspringapis-production.up.railway.app
+<img width="592" alt="Captura de pantalla 2024-01-03 a la(s) 2 56 17 p m" src="https://github.com/FivelRangel/NymbusBackendJSpringAPIs/assets/154839566/5498ed74-5d83-4650-9b59-125990b71e82">
