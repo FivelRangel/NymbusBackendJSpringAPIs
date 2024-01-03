@@ -454,7 +454,7 @@
                    <script>
         document.addEventListener('DOMContentLoaded', () => {
            let dataSize = 0;
-            fetch('https://nymbusbackendjspringapis-production.up.railway.app/bank/users')
+            fetch('https://nymbusbackendjspringapis-production.up.railway.app/transactions/all')
                 .then(response => response.json())
                 .then(data => {
                     const tableBody = document.getElementById('tableBody');
@@ -471,7 +471,7 @@
                         row.appendChild(idCell);
 
                         const nameCell = document.createElement('td');
-                        nameCell.textContent = item.nombre;
+                        nameCell.textContent = item.identifier;
                         row.appendChild(nameCell);
 
                         const identifierCell = document.createElement('td');
@@ -479,8 +479,16 @@
                         row.appendChild(identifierCell);
 
                         const priceCell = document.createElement('td');
-                        priceCell.textContent = `$${item.budget}`;
+                        priceCell.textContent = `$${item.amount}`;
                         row.appendChild(priceCell);
+
+                        const toIdentifier = document.createElement('td');
+                        toIdentifier.textContent = `$${item.to_identifier}`;
+                        row.appendChild(toIdentifier);
+
+                         const date = document.createElement('td');
+                        date.textContent = `$${item.date}`;
+                        row.appendChild(date);
 
                         tableBody.appendChild(row);
                     });
