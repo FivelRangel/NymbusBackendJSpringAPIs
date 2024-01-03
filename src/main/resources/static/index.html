@@ -568,7 +568,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Position</th>
+                    <th scope="col">identifier</th>
                     <th scope="col">Budget</th>
                     <th scope="col">Start Date</th>
                   </tr>
@@ -588,11 +588,11 @@
                         row.appendChild(idCell);
 
                         const nameCell = document.createElement('td');
-                        nameCell.textContent = item.nombre;
+                        nameCell.textContent = item.identifier;
                         row.appendChild(nameCell);
 
                         const priceCell = document.createElement('td');
-                        priceCell.textContent = `$${item.precio}`;
+                        priceCell.textContent = `$${item.budget}`;
                         row.appendChild(priceCell);
 
                         tableBody.appendChild(row);
