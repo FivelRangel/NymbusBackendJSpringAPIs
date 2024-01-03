@@ -23,4 +23,9 @@ public class BankController {
         return bankService.getUsers();
     }
 
+    @GetMapping("/totalBudget")
+    public int getTotalBudget() {
+        return bankService.getBudget();
+    }
+
     }

@@ -17,4 +17,17 @@ public class BankService {
     public List<BankUser> getUsers() {
         return bankRepository.findAll();
     }
+
+    public int getBudget() {
+        int totalBudget=0;
+         bankRepository.findAll();
+
+         for (Long i = 0L; i<bankRepository.findAll().size(); i++)
+         {
+             totalBudget=totalBudget+bankRepository.getReferenceById(i).getBudget();
+         }
+
+         return totalBudget;
+
+    }
 }
