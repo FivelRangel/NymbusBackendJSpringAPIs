@@ -20,11 +20,11 @@ public class BankService {
 
     public int getBudget() {
         int totalBudget=0;
-         bankRepository.findAll();
+        List<BankUser> list= bankRepository.findAll();
 
-         for (Long i = 0L; i<bankRepository.findAll().size(); i++)
+         for (int i = 0; i<bankRepository.findAll().size(); i++)
          {
-             totalBudget=totalBudget+bankRepository.getReferenceById(i).getBudget();
+             totalBudget=totalBudget+list.get(i).getBudget();
          }
 
          return totalBudget;
