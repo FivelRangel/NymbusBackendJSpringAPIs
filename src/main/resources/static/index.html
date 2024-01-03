@@ -502,22 +502,23 @@
                       
                     </div>
                     <div class="ps-3">
-                      <h6 id="dataSizeElement">214</h6>
+                      <h6 id="dataSize2">214</h6>
                       <!--<span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>-->
 
                       <script>
         document.addEventListener('DOMContentLoaded', () => {
            let dataSize = 0;
-            fetch('https://nymbusbackendjspringapis-production.up.railway.app/transactions/all')
+            fetch('https://nymbusbackendjspringapis-production.up.railway.app/bank/users')
                 .then(response => response.json())
                 .then(data => {
                     const tableBody = document.getElementById('tableBody');
                      dataSize = data.length;
-                    const dataSizeElementTransactions = document.getElementById('dataSizeElement');
-                    if (dataSizeElementTransactions) {
-                        dataSizeElementTransactions.textContent = dataSizeElementTransactions.toString();
+                    const dataSizeElement = document.getElementById('dataSize2');
+                    if (dataSizeElement) {
+                        dataSizeElement.textContent = dataSize.toString();
                     }
 
+                   
                 })
                 .catch(error => console.error('Error al obtener datos de la API:', error));
         });
