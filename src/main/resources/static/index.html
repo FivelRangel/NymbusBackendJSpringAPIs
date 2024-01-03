@@ -502,8 +502,26 @@
                       
                     </div>
                     <div class="ps-3">
-                      <h6>214</h6>
+                      <h6 id="dataSizeElement">214</h6>
                       <!--<span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>-->
+
+                      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           let dataSize = 0;
+            fetch('https://nymbusbackendjspringapis-production.up.railway.app/transactions/all')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('tableBody');
+                     dataSize = data.length;
+                    const dataSizeElementTransactions = document.getElementById('dataSizeElement');
+                    if (dataSizeElementTransactions) {
+                        dataSizeElementTransactions.textContent = dataSizeElementTransactions.toString();
+                    }
+
+                })
+                .catch(error => console.error('Error al obtener datos de la API:', error));
+        });
+    </script>
 
                     </div>
                   </div>
@@ -539,7 +557,7 @@
                     </div>
                     <div class="ps-3">
                       <h6 id="dataSize"></h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                     
 
                     </div>
                   </div>
