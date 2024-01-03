@@ -6,6 +6,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Nymbus Bank</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -483,11 +485,11 @@
                         row.appendChild(priceCell);
 
                         const toIdentifier = document.createElement('td');
-                        toIdentifier.textContent = `$${item.to_identifier}`;
+                        toIdentifier.textContent = item.toIdentifier;
                         row.appendChild(toIdentifier);
 
                          const date = document.createElement('td');
-                        date.textContent = `$${item.date}`;
+                        date.textContent = item.date;
                         row.appendChild(date);
 
                         tableBody.appendChild(row);
@@ -496,6 +498,32 @@
                 .catch(error => console.error('Error al obtener datos de la API:', error));
         });
     </script>
+
+     <button id="generatePdfButton">Generar PDF</button>
+
+  <script>
+    document.getElementById('generatePdfButton').addEventListener('click', () => {
+      fetch('https://nymbusbackendjspringapis-production.up.railway.app/transactions/all')
+        .then(response => response.json())
+        .then(data => {
+          const pdf = new jsPDF();
+          let y = 20;
+
+          data.forEach((transaction, index) => {
+            const { id, identifier, amount, date, toIdentifier } = transaction;
+            pdf.text(20, y, `Transacción ${index + 1}:`);
+            pdf.text(20, y + 10, `ID: ${id}, Identificador: ${identifier}, Monto: ${amount}, Fecha: ${date}, Destinatario: ${toIdentifier}`);
+            y += 30;
+          });
+
+          pdf.save('transacciones.pdf');
+        })
+        .catch(error => {
+          console.error('Error al obtener datos del API:', error);
+          // Manejo de errores
+        });
+    });
+  </script>
 
                 </tbody>
               </table>
