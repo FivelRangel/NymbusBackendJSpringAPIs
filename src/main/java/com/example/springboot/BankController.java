@@ -23,9 +23,18 @@ public class BankController {
         return bankService.getUsers();
     }
 
+    //Dashboard
     @GetMapping("/totalBudget")
     public int getTotalBudget() {
         return bankService.getBudget();
     }
+
+    //Transactions
+    @GetMapping("/transactions")
+    public int getTotalTransactions() {
+        return bankService.getBudget();
+    }
+
+
 
     }

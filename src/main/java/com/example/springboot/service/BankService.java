@@ -29,6 +29,12 @@ public class BankService {
          }
 
          return totalBudget;
-
     }
+
+    public List<BankUser> getTransactions() {
+        return bankRepository.findAll();
+    }
+
+
+
 }
