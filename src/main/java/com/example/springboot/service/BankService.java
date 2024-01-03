@@ -24,6 +24,7 @@ public class BankService {
 
          for (int i = 0; i<bankRepository.findAll().size(); i++)
          {
+             System.out.println(list.get(i).toString());
              totalBudget=totalBudget+list.get(i).getBudget();
          }
 
