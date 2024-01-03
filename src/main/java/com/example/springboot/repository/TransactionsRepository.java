@@ -1,8 +1,6 @@
 package com.example.springboot.repository;
 
 import com.example.springboot.entity.BankTransactions;
-import com.example.springboot.entity.BankUser;
-import com.example.springboot.entity.Producto;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -14,6 +12,7 @@ public interface TransactionsRepository extends JpaRepository<BankTransactions, 
     // Aquí puedes agregar métodos personalizados si es necesario
 
     List<BankTransactions> findByIdentifier(String identifier);
+    List<BankTransactions> findById(int identifier);
 
 }
 
