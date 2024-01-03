@@ -3,7 +3,7 @@ package com.example.springboot.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name ="transferences")
+@Table(name ="transactions")
 public class BankTransactions {
 
     @Id
