@@ -3,9 +3,7 @@ package com.example.springboot;
 import com.example.springboot.entity.BankUser;
 import com.example.springboot.service.BankService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +19,13 @@ public class BankController {
     @GetMapping("/users")
     public List<BankUser> getUsers() {
         return bankService.getUsers();
+    }
+
+    @PostMapping("/addUser")
+    public BankUser addUser(@RequestBody BankUser bankUser)
+    {
+
+        return bankService.setUser(bankUser);
     }
 
     //Dashboard

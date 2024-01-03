@@ -7,6 +7,7 @@ import com.example.springboot.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -33,6 +34,12 @@ public class BankService {
 
     public List<BankUser> getTransactions() {
         return bankRepository.findAll();
+    }
+
+    public BankUser setUser(BankUser bankUser)
+    {
+
+        return bankRepository.save(bankUser);
     }
 
 

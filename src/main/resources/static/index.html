@@ -638,6 +638,84 @@
             </div>
           </div>
 
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">New Client</h5>
+
+              <!-- Vertical Form -->
+              <form class="row g-3">
+                      <div class="col-12">
+                  <label for="inputNanme4" class="form-label">ID</label>
+                  <input type="text" class="form-control" id="inputNanme4">
+                </div>
+                <div class="col-12">
+                  <label for="inputNanme4" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="inputNanme4">
+                </div>
+                <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Password</label>
+                  <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-12">
+                  <label for="inputPassword4" class="form-label">Budget</label>
+                  <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                   <div class="col-12">
+                  <label for="inputPassword4" class="form-label">Identifier</label>
+                  <input type="identifier" class="form-control" id="inputIdentifier">
+                </div>
+              
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+              </form><!-- Vertical Form -->
+
+               <script>
+    function submitForm() {
+      const id = document.getElementById('inputID').value;
+      const name = document.getElementById('inputName').value;
+      const email = document.getElementById('inputEmail').value;
+      const budget = document.getElementById('inputBudget').value;
+      const identifier = document.getElementById('inputIdentifier').value;
+
+
+      const formData = {
+        id: id,
+        name: name,
+        email: email,
+        budget: budget,
+        identifier: identifier
+      };
+
+      fetch('URL_DEL_SERVICIO', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Response:', data);
+        // Hacer algo con la respuesta si es necesaria
+      })
+      .catch(error => {
+        console.error('There was an error:', error);
+        // Manejar errores
+      });
+    }
+  </script>
+
+            </div>
+          </div>
+
+
             <!--End Nymbus-->
 
             
