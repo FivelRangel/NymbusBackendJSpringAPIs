@@ -52,20 +52,13 @@
     </div><!-- End Logo -->
 
     <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
+      
     </div><!-- End Search Bar -->
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
+        
 
         <li class="nav-item dropdown">
 
@@ -545,7 +538,7 @@
                       <i class="bi bi-people"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>1244</h6>
+                      <h6 id="dataSize"></h6>
                       <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
 
                     </div>
@@ -576,10 +569,17 @@
                   
                    <script>
         document.addEventListener('DOMContentLoaded', () => {
+           let dataSize = 0;
             fetch('https://nymbusbackendjspringapis-production.up.railway.app/bank/users')
                 .then(response => response.json())
                 .then(data => {
                     const tableBody = document.getElementById('tableBody');
+                     dataSize = data.length;
+                    const dataSizeElement = document.getElementById('dataSize');
+                    if (dataSizeElement) {
+                        dataSizeElement.textContent = dataSize.toString();
+                    }
+
                     data.forEach(item => {
                         const row = document.createElement('tr');
                         const idCell = document.createElement('td');
