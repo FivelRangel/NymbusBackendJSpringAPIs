@@ -11,8 +11,7 @@ import java.util.List;
 public interface TransactionsRepository extends JpaRepository<BankTransactions, Long> {
     // Aquí puedes agregar métodos personalizados si es necesario
 
-    List<BankTransactions> findByIdentifier(String identifier);
-    List<BankTransactions> findById(int identifier);
+    List<BankTransactions> findByidentifier(String identifier);
 
 }
 
