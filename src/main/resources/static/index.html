@@ -464,17 +464,14 @@
         fetch('https://nymbusbackendjspringapis-production.up.railway.app/bank/totalBudget')
             .then(response => response.json()) // Parsear la respuesta como JSON
             .then(data => {
-                // Obtener el entero de la respuesta JSON (manejo de 'undefined')
-                const integerFromAPI = data && data.integer ? data.integer : 'No disponible';
+                // Obtener el valor int de la respuesta JSON
+                const intValueFromAPI = data && data.int ? data.int : 0; // Reemplaza 'int' con el nombre del campo int en tu JSON
 
-                // Mostrar el entero en la consola antes de mostrarlo en la etiqueta <h6>
-                console.log('Valor obtenido:', integerFromAPI);
-
-                // Mostrar el entero en la etiqueta <h6> con formato $xxx o mensaje "No disponible"
-                document.getElementById('integerValue').innerText = `$${integerFromAPI}`;
+                // Mostrar el int en la etiqueta <h6> convirtiéndolo a string
+                document.getElementById('intValue').innerText = intValueFromAPI.toString();
             })
             .catch(error => {
-                console.error('Error al obtener el entero:', error);
+                console.error('Error al obtener el int:', error);
             });
     </script>
 
