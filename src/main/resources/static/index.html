@@ -465,7 +465,7 @@
             .then(response => response.json()) // Parsear la respuesta como JSON
             .then(data => {
                 // Obtener el valor int de la respuesta JSON
-                const intValueFromAPI = data && data.int ? data.int : 0; // Reemplaza 'int' con el nombre del campo int en tu JSON
+                const intValueFromAPI = data; // Reemplaza 'int' con el nombre del campo int en tu JSON
 
                 // Mostrar el int en la etiqueta <h6> convirtiéndolo a string
                 document.getElementById('intValue').innerText = intValueFromAPI.toString();
