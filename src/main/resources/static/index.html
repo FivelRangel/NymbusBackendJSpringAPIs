@@ -502,23 +502,24 @@
                       
                     </div>
                     <div class="ps-3">
-                      <h6 id="dataSize2">214</h6>
+                      <h6 id="dataSize2"></h6>
                       <!--<span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>-->
 
-                      <script>
+                    <script>
         document.addEventListener('DOMContentLoaded', () => {
-           let dataSize = 0;
+            let dataSize = 0;
             fetch('https://nymbusbackendjspringapis-production.up.railway.app/bank/users')
                 .then(response => response.json())
                 .then(data => {
                     const tableBody = document.getElementById('tableBody');
-                     dataSize = data.length;
+                    dataSize = data.length;
+
                     const dataSizeElement = document.getElementById('dataSize2');
                     if (dataSizeElement) {
                         dataSizeElement.textContent = dataSize.toString();
                     }
 
-                   
+                    // Generar las filas de la tabla, similar al ejemplo anterior...
                 })
                 .catch(error => console.error('Error al obtener datos de la API:', error));
         });
