@@ -570,7 +570,6 @@
                     <th scope="col">Name</th>
                     <th scope="col">identifier</th>
                     <th scope="col">Budget</th>
-                    <th scope="col">Start Date</th>
                   </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -586,6 +585,10 @@
                         const idCell = document.createElement('td');
                         idCell.textContent = item.id;
                         row.appendChild(idCell);
+
+                        const nameCell = document.createElement('td');
+                        nameCell.textContent = item.nombre;
+                        row.appendChild(nameCell);
 
                         const nameCell = document.createElement('td');
                         nameCell.textContent = item.identifier;
