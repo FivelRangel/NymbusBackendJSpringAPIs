@@ -18,7 +18,7 @@ public class TransactionsService {
         return transactionsRepository.findAll();
     }
 
-    public List<BankTransactions> buscarTrasferenciasPorUsuario(int identifier) {
+    public List<BankTransactions> buscarTrasferenciasPorUsuario(String identifier) {
 
         return transactionsRepository.findByidentifier(identifier);
 

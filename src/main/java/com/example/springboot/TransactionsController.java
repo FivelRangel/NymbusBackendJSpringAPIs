@@ -41,7 +41,7 @@ public class TransactionsController {
     String buscarTrasferenciasPorUsuarioLocal()
     {
 
-        transactionsService.buscarTrasferenciasPorUsuario(1);
+        transactionsService.buscarTrasferenciasPorUsuario("1");
 
         return "transactionsService.buscarTrasferenciasPorUsuario(14231).toString()";
 
