@@ -26,8 +26,12 @@ public class TransactionsController {
     }
 
     @GetMapping("/getTransactionPerUser/{userIdentifier}")
-    public List<BankTransactions> buscarTrasferenciasPorUsuario(@PathVariable String identifier)
+    public
+    //List<BankTransactions>
+    int buscarTrasferenciasPorUsuario(@PathVariable String identifier)
     {
-        return transactionsService.buscarTrasferenciasPorUsuario(identifier);
+        return 1;
+
+               // transactionsService.buscarTrasferenciasPorUsuario(identifier);
     }
 }
