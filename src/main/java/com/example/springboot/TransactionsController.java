@@ -57,4 +57,13 @@ public class TransactionsController {
 
         // transactionsService.buscarTrasferenciasPorUsuario(identifier);
     }
+
+    @GetMapping("/getTransactionPerUser/all/{variable}")
+    public
+    List<BankTransactions> buscarTrasferenciasPorUsuarioLocalUserVariable(@PathVariable String variable)
+    {
+        return transactionsService.buscarTrasferenciasPorUsuario(variable);
+
+        // transactionsService.buscarTrasferenciasPorUsuario(identifier);
+    }
 }
