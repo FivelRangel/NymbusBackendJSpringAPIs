@@ -38,9 +38,12 @@ public class TransactionsController {
     @GetMapping("/getTransactionPerUser/all")
     public
         //List<BankTransactions>
-    int buscarTrasferenciasPorUsuarioLocal()
+    String buscarTrasferenciasPorUsuarioLocal()
     {
-        return 1;
+
+       // transactionsService.buscarTrasferenciasPorUsuario(1);
+
+        return transactionsService.buscarTrasferenciasPorUsuario(1).toString();
 
         // transactionsService.buscarTrasferenciasPorUsuario(identifier);
     }
