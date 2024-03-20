@@ -43,7 +43,7 @@ public class TransactionsController {
 
        // transactionsService.buscarTrasferenciasPorUsuario(1);
 
-        return transactionsService.buscarTrasferenciasPorUsuario(1).toString();
+        return transactionsService.buscarTrasferenciasPorUsuario(14231).toString();
 
         // transactionsService.buscarTrasferenciasPorUsuario(identifier);
     }
