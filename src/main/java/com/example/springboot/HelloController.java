@@ -19,7 +19,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Greetings from Spring Boot in hello Controller!";
+        return "Greetings from Spring Boot in hello Controller! Today March 19x";
     }
 
     @GetMapping("/obtenerProductos")
